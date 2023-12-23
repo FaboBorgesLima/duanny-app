@@ -1,0 +1,18 @@
+@import "../../scss/variables";
+
+.photos-frame {
+	img {
+		border-radius: 1rem;
+		width: 100%;
+		height: fit-content;
+		object-fit: cover;
+
+		@each $key, $size in $grid-breakpoints {
+			@if ($size != 0px) {
+				@media screen and (min-width: $size) {
+					height: $size/3;
+				}
+			}
+		}
+	}
+}

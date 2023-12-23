@@ -1,0 +1,121 @@
+@import "./variables";
+
+html * {
+	box-sizing: border-box;
+}
+
+html {
+	font-family: "Josefin Sans", sans-serif;
+	color: $off-black;
+	background-color: $off-white;
+
+	@media screen and (prefers-color-scheme: dark) {
+		background-color: $off-black;
+		color: $off-white;
+	}
+}
+
+p {
+	line-height: 1.5rem;
+	text-align: justify;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-weight: bold;
+}
+
+h1 {
+	font-size: map-get($font-sizes, 1);
+	font-family: "Miniver", cursive;
+	text-transform: capitalize;
+}
+
+h2 {
+	font-size: map-get($font-sizes, 2);
+}
+
+h3 {
+	font-size: map-get($font-sizes, 3);
+}
+
+h4 {
+	font-size: map-get($font-sizes, 4);
+}
+
+.bg-red {
+	background-color: $red;
+}
+
+.bg-purple {
+	background-color: $purple;
+}
+
+.bg-pink {
+	background-color: $pink;
+}
+
+.text-red {
+	color: $red;
+}
+
+.text-purple {
+	color: $purple;
+}
+
+.border-none {
+	border: none;
+}
+@each $key, $font-size in $font-sizes {
+	.fs-#{$key} {
+		font-size: $font-size;
+	}
+}
+
+.text-center {
+	text-align: center;
+}
+
+.p-1 {
+	padding: 1rem;
+}
+
+.d-flex {
+	display: flex;
+}
+
+.justify-content-space-around {
+	justify-content: space-around;
+}
+
+.justify-content-space-between {
+	justify-content: space-between;
+}
+
+.container {
+	margin-right: auto;
+	margin-left: auto;
+	width: 100%;
+	@each $key, $size in $grid-breakpoints {
+		@media screen and (min-width: $size) {
+			@if ($size != 0px) {
+				width: $size;
+			}
+		}
+	}
+}
+
+@each $key, $size in $grid-breakpoints {
+	.grid-split-on-#{$key} {
+		display: grid;
+		grid-template-columns: 1fr;
+		@media screen and (min-width: $size) {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+}
+.g-1 {
+	gap: 1rem;
+}

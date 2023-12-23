@@ -1,0 +1,26 @@
+@import "../../scss/variables";
+
+@keyframes jiggles {
+	0% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(10deg);
+	}
+	75% {
+		transform: rotate(-10deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+.bi:hover::before {
+	text-shadow: 0px 0px 1px $purple;
+	animation: jiggles 2s infinite;
+}
+
+nav {
+	position: sticky;
+	bottom: 0;
+	left: 0;
+}
