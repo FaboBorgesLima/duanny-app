@@ -1,0 +1,60 @@
+@import "../../scss/variables";
+$initial-heigth: 10rem;
+$final-heigth: 9rem;
+
+#clicker-head {
+	background-color: $purple;
+	border-radius: 1rem;
+	padding: 1rem;
+	margin-bottom: 1rem;
+	display: flex;
+	gap: 1rem;
+	flex-direction: column;
+
+	@media screen and (min-width: map-get($grid-breakpoints,lg)) {
+		flex-direction: row;
+		justify-content: space-evenly;
+	}
+
+	button {
+		background-image: url("../../../public/img/games/clicker/clicker.jpeg");
+		background-size: cover;
+		height: $initial-heigth;
+		width: $initial-heigth;
+		background-color: $purple;
+		border: none;
+		border-radius: 1rem;
+		margin-left: auto;
+		margin-right: auto;
+		transition: 0.05s;
+	}
+	.button-div {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+	button:active {
+		box-shadow: 0px 0px ($initial-heigth - $final-heigth)/2 $off-black;
+		animation: jiggles 0.5s infinite;
+	}
+}
+@keyframes jiggles {
+	0% {
+		margin-top: 0px;
+		margin-bottom: 0px;
+		height: $initial-heigth;
+		width: $initial-heigth;
+	}
+	50% {
+		width: $final-heigth;
+		height: $final-heigth;
+		margin-top: ($initial-heigth - $final-heigth)/2;
+		margin-bottom: ($initial-heigth - $final-heigth)/2;
+	}
+	100% {
+		margin-top: 0px;
+		margin-bottom: 0px;
+		height: $initial-heigth;
+		width: $initial-heigth;
+	}
+}

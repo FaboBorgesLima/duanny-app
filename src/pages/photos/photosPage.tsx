@@ -1,42 +1,30 @@
-import Reacr, { FC } from "react";
+import React, { FC } from "react";
 import { PhotosFrame } from "../../components";
 
+class CustomArray extends Array<string> {
+	public randomItem() {
+		return this[Math.floor(Math.random() * this.length)];
+	}
+}
+
 function randomDescGenerator(): string {
-	let msg: string = "Duanny ";
-	const nParts: number = 3,
-		part1: number = Math.trunc(Math.random() * nParts),
-		part2: number = Math.trunc(Math.random() * nParts);
+	const part1: CustomArray = new CustomArray(),
+		part2: CustomArray = new CustomArray(),
+		part3: CustomArray = new CustomArray();
 
-	switch (part1) {
-		case 0:
-			msg += "incrivelmente ";
-			break;
-		case 1:
-			msg += "maravilhosamente ";
-			break;
-		case 2:
-			msg += "estupendamente ";
-	}
+	part1.push("Duanny", "Ayka", "Aika", "Aica", "Duany");
 
-	switch (part2) {
-		case 0:
-			msg += "incrivel ";
-			break;
-		case 1:
-			msg += "marvilhosa ";
-			break;
-		case 2:
-			msg += "veterinaria ";
-			break;
-	}
+	part2.push("incrivelmente", "maravilhosamente", "majestosamente");
 
-	return msg;
+	part3.push("incrivel", "maravilhosa", "veterinaria", "Ayka");
+
+	return [part1.randomItem(), part2.randomItem(), part3.randomItem()].join(" ");
 }
 
 const PhotosPage: FC = () => {
 	const photosLinks: string[] = [];
 
-	for (let i: number = 0; i < 5; i++) {
+	for (let i: number = 0; i < 7; i++) {
 		photosLinks.push("./img/duanny/" + i + ".jpeg");
 	}
 
@@ -46,6 +34,7 @@ const PhotosPage: FC = () => {
 				{photosLinks.map((link) => {
 					return (
 						<PhotosFrame
+							key={link}
 							alt="Duanny"
 							desc={randomDescGenerator()}
 							link={link}></PhotosFrame>

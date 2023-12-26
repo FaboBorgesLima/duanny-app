@@ -14,7 +14,6 @@ function App() {
 			<NavBar
 				onClick={(selected) => {
 					setSelectedItem(selected);
-					console.log(selected);
 					return undefined;
 				}}
 				selectedItem={selectedItem}></NavBar>

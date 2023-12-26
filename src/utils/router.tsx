@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { MainPages } from "../App";
-import { HomePage, PhotosPage } from "../pages/";
+import { GamesPage, HomePage, PhotosPage } from "../pages/";
 
 interface RouterProps {
 	page: MainPages;
@@ -12,6 +12,8 @@ const CustomRouter: FC<RouterProps> = (data) => {
 			return <HomePage></HomePage>;
 		case "Photos":
 			return <PhotosPage></PhotosPage>;
+		case "Games":
+			return <GamesPage></GamesPage>;
 	}
 
 	return <HomePage></HomePage>;
