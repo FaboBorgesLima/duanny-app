@@ -28,52 +28,48 @@ const ClickerStruct: FC<ClickerStructProps> = (props) => {
 
 	return (
 		<div className="clicker-card">
-			<img src={props.struct.pathIcon}></img>
 			<div>
-				<h3>{props.struct.name}</h3>
-				<p>{props.struct.description}</p>
-			</div>
-			<div>
+				<img src={props.struct.pathIcon}></img>
 				<div>
-					<span className="price">{price.toFixed(1)} aykas</span>
+					<h3>{props.struct.name}</h3>
+					<p>{props.struct.description}</p>
 				</div>
+			</div>
+			<div className="plus-data">
+				<span className="price">{price.toFixed(1)} aykas</span>
 				<div>
 					<span>
 						{quant} {props.struct.name}
 					</span>
+					<button
+						className="fs-1"
+						onClick={() => {
+							if (price > props.counter) return;
+
+							setQuant(quant + 1);
+
+							props.setPerSecond(
+								props.perSecond + props.struct.generationPerSecond
+							);
+
+							props.struct.quant++;
+
+							props.setCounter(props.counter - price);
+
+							props.schema.aykas = props.counter - price;
+
+							props.struct.price = price * 1.1;
+
+							setPrice(price * 1.1);
+
+							props.save(props.schema);
+
+							props.setSchema(props.schema);
+						}}>
+						+
+					</button>
 				</div>
-				<div>
-					<span>{quant * props.struct.generationPerSecond} aykas/s</span>
-				</div>
-			</div>
-			<div>
-				<button
-					className="fs-1"
-					onClick={() => {
-						if (price > props.counter) return;
-
-						setQuant(quant + 1);
-
-						props.setPerSecond(
-							props.perSecond + props.struct.generationPerSecond
-						);
-
-						props.struct.quant++;
-
-						props.setCounter(props.counter - price);
-
-						props.schema.aykas = props.counter - price;
-
-						props.struct.price = price * 1.1;
-
-						setPrice(price * 1.1);
-
-						props.save(props.schema);
-
-						props.setSchema(props.schema);
-					}}>
-					+
-				</button>
+				<span>{quant * props.struct.generationPerSecond} aykas/s</span>
 			</div>
 		</div>
 	);
