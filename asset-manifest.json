@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/duanny-app/static/css/main.d06c370d.css",
+    "main.css": "/duanny-app/static/css/main.3504d179.css",
     "main.js": "/duanny-app/static/js/main.984c8b08.js",
     "static/js/787.9fee1cb8.chunk.js": "/duanny-app/static/js/787.9fee1cb8.chunk.js",
     "static/media/clicker.jpeg": "/duanny-app/static/media/clicker.73fece9004309acfd471.jpeg",
     "index.html": "/duanny-app/index.html",
-    "main.d06c370d.css.map": "/duanny-app/static/css/main.d06c370d.css.map",
+    "main.3504d179.css.map": "/duanny-app/static/css/main.3504d179.css.map",
     "main.984c8b08.js.map": "/duanny-app/static/js/main.984c8b08.js.map",
     "787.9fee1cb8.chunk.js.map": "/duanny-app/static/js/787.9fee1cb8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d06c370d.css",
+    "static/css/main.3504d179.css",
     "static/js/main.984c8b08.js"
   ]
 }
