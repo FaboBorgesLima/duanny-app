@@ -1,16 +1,18 @@
 {
   "files": {
-    "main.css": "/duanny-app/static/css/main.3504d179.css",
-    "main.js": "/duanny-app/static/js/main.984c8b08.js",
+    "main.css": "/duanny-app/static/css/main.d309b8a1.css",
+    "main.js": "/duanny-app/static/js/main.9e1a0bce.js",
     "static/js/787.9fee1cb8.chunk.js": "/duanny-app/static/js/787.9fee1cb8.chunk.js",
     "static/media/clicker.jpeg": "/duanny-app/static/media/clicker.73fece9004309acfd471.jpeg",
+    "static/media/cachorro.jpeg": "/duanny-app/static/media/cachorro.13d539e0beae6d69c585.jpeg",
+    "static/media/geinchein.jpeg": "/duanny-app/static/media/geinchein.cebfff3749dba0ad3901.jpeg",
     "index.html": "/duanny-app/index.html",
-    "main.3504d179.css.map": "/duanny-app/static/css/main.3504d179.css.map",
-    "main.984c8b08.js.map": "/duanny-app/static/js/main.984c8b08.js.map",
+    "main.d309b8a1.css.map": "/duanny-app/static/css/main.d309b8a1.css.map",
+    "main.9e1a0bce.js.map": "/duanny-app/static/js/main.9e1a0bce.js.map",
     "787.9fee1cb8.chunk.js.map": "/duanny-app/static/js/787.9fee1cb8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3504d179.css",
-    "static/js/main.984c8b08.js"
+    "static/css/main.d309b8a1.css",
+    "static/js/main.9e1a0bce.js"
   ]
 }
