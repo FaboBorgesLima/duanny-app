@@ -5,6 +5,10 @@ import {
 	StructsAykaClickerInterface,
 } from "../../components/clickerStruct/clickerStruct";
 import { ClickCounter } from "../../components";
+import MangaImg from "../../img/games/manga.jpeg";
+import GeincheinImg from "../../img/games/geinchein.jpeg";
+import CachorroImg from "../../img/games/cachorro.jpeg";
+import ClinicaImg from "../../img/games/clinica_veterinaria.jpeg";
 
 const AykaClicker: FC = () => {
 	const [schema, setSchema] = useState(load()),
@@ -27,11 +31,14 @@ const AykaClicker: FC = () => {
 	return (
 		<>
 			<div id="clicker-head">
-				<ClickCounter count={counter} perSecond={perSecond}></ClickCounter>
+				<ClickCounter
+					count={counter}
+					perSecond={perSecond}
+					perClick={1 + perSecond * 0.1}></ClickCounter>
 				<div className="button-div">
 					<button
 						onClick={() => {
-							schema.aykas++;
+							schema.aykas += 1 + perSecond * 0.1;
 							setCounter(schema.aykas);
 							setSchema(schema);
 							save(schema);
@@ -87,7 +94,7 @@ const initialSetup: AykaClickerSchema = {
 			generationPerSecond: 1,
 			price: 10,
 			description: "Manga de 'coletor contra coletor'",
-			pathIcon: "./img/games/clicker/manga.jpeg",
+			pathIcon: MangaImg,
 		},
 		{
 			name: "geinchein",
@@ -95,7 +102,7 @@ const initialSetup: AykaClickerSchema = {
 			generationPerSecond: 2,
 			price: 100,
 			description: "Um jogo sobre anime e pesca",
-			pathIcon: "./img/games/clicker/geinchein.jpeg",
+			pathIcon: GeincheinImg,
 		},
 		{
 			name: "Cachorro",
@@ -103,7 +110,7 @@ const initialSetup: AykaClickerSchema = {
 			generationPerSecond: 10,
 			price: 10000,
 			description: "Um cachorro muito fofo",
-			pathIcon: "./img/games/clicker/cachorro.jpeg",
+			pathIcon: CachorroImg,
 		},
 		{
 			name: "clinica veterinaria",
@@ -111,7 +118,7 @@ const initialSetup: AykaClickerSchema = {
 			generationPerSecond: 1000,
 			price: 100000000,
 			description: "Uma clinica com varios cachorros",
-			pathIcon: "./img/games/clicker/clinica_veterinaria.jpeg",
+			pathIcon: ClinicaImg,
 		},
 	],
 	timeStamp: new Date().getTime(),

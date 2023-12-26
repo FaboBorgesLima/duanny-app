@@ -25,7 +25,7 @@ const PhotosPage: FC = () => {
 	const photosLinks: string[] = [];
 
 	for (let i: number = 0; i < 7; i++) {
-		photosLinks.push("./img/duanny/" + i + ".jpeg");
+		photosLinks.push(process.env.PUBLIC_URL + "/assets/img/" + i + ".jpeg");
 	}
 
 	return (
