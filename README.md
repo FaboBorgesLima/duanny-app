@@ -3,4 +3,4 @@ Duanny's App is a web application for a birthday's present for a friend, it runs
 
 ## How to start ?
 
-Just type "npm start" and have fun or access the [deploy link]([https://link-url-here.org](https://faboborgeslima.github.io/duanny-app/)) 
+Just type "npm start" and have fun or access the [deploy link](https://link-url-here.org](https://faboborgeslima.github.io/duanny-app/) 
